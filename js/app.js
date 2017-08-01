@@ -12,7 +12,7 @@ function send_message(message){
       $('.cureent_sms').hide();
       $('.cureent_sms').delay(50).fadeIn();
       $('.cureent_sms').removeClass("current_sms");
-}
+    }
 
 // get the username
 function get_username(){
@@ -20,35 +20,35 @@ function get_username(){
 }
 
 
-// ai function
+// simple ai function
 function ai(message){
-    if (username.length < 3){
-      username = message;
-      send_message('Hi, nice to meet you ' + username + ', how are you doing.. ')
-    }
+        if (username.length < 3){
+          username = message;
+          send_message('Hi, nice to meet you ' + username + ', how are you doing.. ')
+        }
 
-    if ((message.indexOf('how are you') >= 0) || (message.indexOf('about you') >= 0)){
-      send_message('Am okey, thanks for ask ' + '<i>' + username + '</i>');
-    }
+        if ((message.indexOf('how are you') >= 0) || (message.indexOf('about you') >= 0)){
+          send_message('Am okey, thanks for ask ' + '<i>' + username + '</i>');
+        }
 
-    if ((message.indexOf('what is your name') >= 0) || (message.indexOf('name') >= 0)){
-      send_message('My name in ChatBox.. am here to chat with you..');
-    }
+        if ((message.indexOf('what is your name') >= 0) || (message.indexOf('name') >= 0)){
+          send_message('My name in ChatBox.. am here to chat with you..');
+        }
 
-    if ((message.indexOf('old') >= 0) || (message.indexOf('age') >= 0)){
-      send_message('I do not know how old i am.. am sorry..!!');
-    }
+        if ((message.indexOf('old') >= 0) || (message.indexOf('age') >= 0)){
+          send_message('I do not know how old i am.. am sorry..!!');
+        }
 
-    if ((message.indexOf('sex') >= 0) || (message.indexOf('love') >= 0)){
-      send_message('Am sorry i can not tell you about that.');
-    }
+        if ((message.indexOf('sex') >= 0) || (message.indexOf('love') >= 0)){
+          send_message('Am sorry i can not tell you about that.');
+        }
 
-    if (message.indexOf('time') >= 0){
-      var date = new Date();
-      var hour = date.getHours();
-      var minutes = date.getMinutes();
-      send_message('Current time is: ' + hour + ':' + minutes );
-    }
+        if (message.indexOf('time') >= 0){
+          var date = new Date();
+          var hour = date.getHours();
+          var minutes = date.getMinutes();
+          send_message('Current time is: ' + hour + ':' + minutes );
+        }
 }
 
 
@@ -73,7 +73,7 @@ $(function() {
           //store the first sms
         var prevSms = $('.container').html();
 
-          //check if prev sms length is greater than 4
+          //check if prev sms length is greater than 8
         if (prevSms.length > 8) {
           prevSms = prevSms + '<br>'
           }
