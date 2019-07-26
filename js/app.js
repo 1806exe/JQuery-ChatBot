@@ -19,7 +19,6 @@ function get_username(){
     send_message('Hi, friend what is your name....?');
 }
 
-
 // simple ai function
 function ai(message){
         if (username.length < 3){
@@ -51,10 +50,9 @@ function ai(message){
         }
 }
 
-
 // main JQuery function
 $(function() {
-
+      // this function is used to call username of user;
       get_username();
 
       $('#text-sms').keypress(function(event){
@@ -82,7 +80,7 @@ $(function() {
         $('.container').html(prevSms + username + sms);
 
         $('.container').scrollTop($('.container').prop('scrollHeight'));
-
+        // the main function
         ai(sms);
       });
 });
